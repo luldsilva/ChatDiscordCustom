@@ -10,7 +10,7 @@ function Titulo(props) {
       <Tag>{props.children}</Tag>
       <style jsx>{`
       ${Tag}{
-        color: ${appConfig.theme.colors.neutrals['500']};
+        color: ${appConfig.theme.colors.neutrals['200']};
         font-size:24px;
         font-weight: 600;
       }
@@ -45,8 +45,8 @@ export default function PaginaInicial() {
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+          backgroundColor: appConfig.theme.colors.primary[920],
+          backgroundImage: 'url(http://cdn.mos.cms.futurecdn.net/my8AUCgUhKERqBBwdPQuXG.jpg)',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
@@ -70,7 +70,7 @@ export default function PaginaInicial() {
             as="form"
             onSubmit={function (infosEvento) {
               infosEvento.preventDefault();
-              roteamento.push('/chat');
+              roteamento.push(`/chat?username=${username}`);
             }}
             styleSheet={{
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -78,18 +78,9 @@ export default function PaginaInicial() {
             }}
           >
             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[200] }}>
               {appConfig.name}
             </Text>
-
-            {/* <input
-              type="text"
-              value={username}
-              onChange={function (event) {
-                const valor = event.target.value;
-                setUsername(valor);
-              }}
-            /> */}
 
             <TextField
               value={username}
